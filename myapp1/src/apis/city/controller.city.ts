@@ -9,6 +9,8 @@ class CityController {
           const cities = await cityRepository.findAllAsync(); 
            res.status(200).json(cities);
         } catch (error) {
+          console.log(`🚀 ~ file: controller.city.ts:12 ~ CityController ~ getAllCities ~ error:`, error)
+
           console.error(error);
            res.status(500).json({
             success: false,

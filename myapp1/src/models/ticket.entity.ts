@@ -3,20 +3,19 @@ import { DateTimeEntity } from './base/dateTimeEntity';
 import { Theater } from './theater.entity';
 
 @Entity('tickets')
-export class Ticket extends DateTimeEntity {  //because the datetime is one of the normal thing when coding => ke thua
+export class Ticket extends DateTimeEntity {
   @PrimaryGeneratedColumn()
-    public id: string;
+  public id: string;
 
   @Column({ type: 'varchar', unique: true, length: 255 })
-    ticketname: string;
+  ticketname: string;
+
+  @Column({ type: 'decimal' })
+  price: number;
 
   @Column()
-    price: number;
-
-  @Column()
-    gift: boolean;
+  gift: boolean;
 
   @ManyToOne((type) => Theater, (theater) => theater.tickets)
-  theater: Theater
-
+  theater: Theater;
 }
