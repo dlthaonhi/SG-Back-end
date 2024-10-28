@@ -15,5 +15,6 @@ const router = express.Router();
 
 router.use("/auth", AuthRouters)
 router.use("/city", CityRouters)
+router.use("/theater",TheaterRouters )
 
 export default router;
